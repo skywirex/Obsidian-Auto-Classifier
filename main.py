@@ -16,6 +16,10 @@ SOURCE_DIR = os.path.join(VAULT_PATH, "00_Inbox")
 logger = logging.getLogger("OAC")
 logger.setLevel(logging.DEBUG)
 
+# Ensure logs directory exists
+LOGS_DIR = "/app/logs"
+os.makedirs(LOGS_DIR, exist_ok=True)
+
 # Create formatter
 formatter = logging.Formatter(
     '[%(asctime)s] %(levelname)s - %(message)s',
@@ -23,7 +27,8 @@ formatter = logging.Formatter(
 )
 
 # Create RotatingFileHandler
-handler = RotatingFileHandler("app.log", maxBytes=1024*1024, backupCount=5)
+log_file = os.path.join(LOGS_DIR, "app.log")
+handler = RotatingFileHandler(log_file, maxBytes=1024*1024, backupCount=5)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
