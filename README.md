@@ -1,5 +1,7 @@
 # Obsidian Auto Classifier (OAC)
 
+![image](https://pub-b731809282d4443bba205fbf4c8ae4ee.r2.dev/6b71e2ee773efe00b4e1d2a8a67c7b61.png)
+
 ## Purpose
 
 This project provides a lightweight tool to automatically classify and move Markdown notes from an Obsidian vault folder `00_Inbox` into one of five IPARAG folders:
